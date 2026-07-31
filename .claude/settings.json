@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bd:*)",
+      "Bash(git status:*)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git show:*)",
+      "Bash(git worktree list:*)",
+      "Bash(git branch --list:*)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "command": "bd prime --hook-json",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ]
+  }
+}

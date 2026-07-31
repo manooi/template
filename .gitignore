@@ -1,0 +1,17 @@
+# Spike code is throwaway — the spike/N branch ref + docs/spike-*.md verdict
+# are the permanent record, not the code. Keep the convention README tracked.
+spike/*
+!spike/README.md
+
+# Dependencies / build output — extend per stack
+node_modules/
+dist/
+build/
+
+# OS / editor noise
+.DS_Store
+
+# Secrets
+.env
+.env.*
+!.env.example
