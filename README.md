@@ -7,20 +7,29 @@ project-specific.
 
 ## What's in here
 
+Grouped by role — everything above the fold is at repo root; the rest is in
+its named directory.
+
 | File | What it is |
 |---|---|
+| **Entrypoints** *(root, read first)* | |
+| `README.md` | This file — what the scaffold is and how to instantiate it |
 | `INSTALLATION.md` | Agent-facing init runbook — hand the repo to an AI agent and it self-initializes (interview → fill placeholders → wire gate → init bd) |
 | `CLAUDE.md` | Project-instructions template — fill the `{{PLACEHOLDERS}}`, delete what doesn't apply |
+| `AGENTS.md` | Cross-tool pointer at CLAUDE.md (symlink or mirror) |
+| **Playbook** *(root, read once, keep forever)* | |
 | `WORKFLOW.md` | The full playbook: lanes, two-tab model, worktree-per-bead, delegation, parallelism |
 | `SCALING.md` | What to do when the serial loop feels slow — bottleneck ranking, diagnostic, options ladder |
-| `AGENTS.md` | Cross-tool pointer at CLAUDE.md (symlink or mirror) |
 | `LESSONS.md` | Hard-won gotchas from the source repo — read once, keep forever |
+| **Living state** *(root, both tabs write it)* | |
 | `ROADMAP.md` | Numbered-item feature backlog skeleton |
+| **Templates & logs** *(in named dirs)* | |
 | `problems/PROBLEMS.md` / `problems/PROBLEMS_DETAILS.md` | Dual-file bug log skeleton (TLDR index + full write-ups) |
 | `plans/epic-TEMPLATE.md` | Epic doc-mirror template (why / scope table / checklist / build order) |
 | `docs/spike-TEMPLATE.md` | Spike report template (findings → GO/PARTIAL/NO-GO verdict) |
 | `docs/features/README.md` | Per-feature deep-dive convention |
 | `docs/key-files.md` | Per-file index stub |
+| **Tooling** | |
 | `.claude/settings.json` | SessionStart `bd prime` hook + read-only git/bd permission allowlist |
 | `.gitignore` + `spike/README.md` | Spike-code-is-throwaway convention, pre-wired |
 | `.claude/agents/` | `builder` / `investigator` / `reviewer` / `groomer` — tool-narrowed subagents (no Agent tool = structural recursion guard), sonnet pinned as default with per-spawn opus escalation (WORKFLOW.md matrix), gate commands templated into the builder prompt; groomer = BA role drafting bead contracts behind an approval gate |
