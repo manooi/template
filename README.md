@@ -9,6 +9,7 @@ project-specific.
 
 | File | What it is |
 |---|---|
+| `INSTALLATION.md` | Agent-facing init runbook — hand the repo to an AI agent and it self-initializes (interview → fill placeholders → wire gate → init bd) |
 | `CLAUDE.md` | Project-instructions template — fill the `{{PLACEHOLDERS}}`, delete what doesn't apply |
 | `WORKFLOW.md` | The full playbook: lanes, two-tab model, worktree-per-bead, delegation, parallelism |
 | `SCALING.md` | What to do when the serial loop feels slow — bottleneck ranking, diagnostic, options ladder |
@@ -46,6 +47,11 @@ project-specific.
    The index becomes the project's immune system.
 
 ## Instantiating a new project
+
+**Fastest path — let an AI agent do it:** point a coding agent at this repo and
+tell it to read [`INSTALLATION.md`](./INSTALLATION.md). It interviews you,
+resolves every placeholder, wires the pre-commit gate, inits bd, and leaves a
+clean first commit. The manual steps below are the same work by hand.
 
 ```bash
 # 1. Copy the scaffold into the new repo root
